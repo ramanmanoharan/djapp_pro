@@ -1,0 +1,92 @@
+{% extends 'home.html' %}
+{% load static %}
+{% block body %}
+    <!-- End Navbar -->
+
+    <!-- Start Content -->
+    <div id="halvor">
+
+        <!-- Start Header -->
+         {% for Profile in Profiles %}
+        <section class="header-page">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 col-12 text-md-left text-center mt-30">
+
+                        <!-- head-title -->
+                        <div class="head-text">
+                            <h2>{{Profile.Name}}</h2>
+                            <div class="mt-10"></div>
+                            <h1>{{Profile.Experience}}</h1>
+                            <p>{{Profile.Education}}</p>
+                        </div>
+                    </div>
+
+                </div>
+                <div id="headmove" class="lines-page">
+                    <div data-depth="0.2" class="img-line">
+                        <img src="{% static 'assets/img/lines.png' %}" alt="">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        <!-- End Header -->
+
+        <section class="main-about between">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7">
+                        <div class="img-page-about">
+                            
+                            <img style="background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(228,51,60,1) 35%, rgba(0,212,255,1) 100%);" src="/images/{{ MEDIA_ROOT }}{{ Profile.Resume }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                    <div class="col-md-5">
+                        <div class="img-page-about">
+                            <img style="background: linear-gradient(120deg, rgba(2,0,36,1) 0%, rgba(228,51,60,1) 35%, rgba(0,212,255,1) 100%);" src="/images/{{ MEDIA_ROOT }}{{ Profile.image }}" class="img-fluid" alt="">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="about-page-text">
+                            <h3>Name: {{ Profile.Name }}</h3>
+                            <h3>Father Name: {{ Profile.Fathername }}</h3>
+                            <h3>DOB: {{ Profile.DOB }}</h3>
+                             
+                             <h3>Address: {{ Profile.Address }}</h3>
+                            
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="about-page-text">
+                            <h3>Designation: {{ Profile.Designation }}</h3>
+                             <h3>Education: {{ Profile.Education }}</h3>
+                            <h3>Experience: {{ Profile.Experience }}</h3>
+                            <h3>Skills: {{ Profile.Skills }}</h3>
+                             <h3>Portfolio: {{ Profile.Portfolio }}</h3>
+                             
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="about-page-text">
+                             <h3>Mail: {{ Profile.Mail }}</h3>
+                              <h3>
+                                <h3>Phone: {{ Profile.Phone }}</h3>
+                              <h3>LinkedIn: {{ Profile.Linkdin }}</h3>
+                            <h3>Github: {{ Profile.Github }}</h3>
+                            <h3>Skills: {{ Profile.Facebook }}</h3>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        {% endfor %}
+       
+
+        <!-- Start Footer -->
+
+{% endblock body %}
